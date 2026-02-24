@@ -6,20 +6,26 @@ namespace EncontrarElTesoro
     public partial class Form1 : Form
     {
         Cell[] cells;
+        int lifes;
+        int points = 0;
         Random rnd;
         string InitialTextButton;
         public Form1()
         {
-            
+
             InitializeComponent();
             InitialTextButton = button0.Text;
             InizializeGame();
-               
+
 
 
         }
         private void InizializeGame()
         {
+           
+            lifes = 3;
+            LifesLabel.Text = lifes.ToString();
+            PointsLabel.Text = points.ToString();
             int cellsNumber = 36;
             int bombsNumber = 3;
             int emptiesNumber = cellsNumber - bombsNumber - 1;
@@ -67,16 +73,30 @@ namespace EncontrarElTesoro
             button.Text = "";
             if (cells[buttonNumber].TYPE == CellType.Bomb)
             {
-                MessageBox.Show("has palmado");
-                InizializeGame();
+                MessageBox.Show("pum!!");
+                lifes -= 1;
+                points = 0;
+                if(lifes <= 0)
+                {
+                    InizializeGame();
+                }
+                LifesLabel.Text = lifes.ToString();
                 button.Text = text;
             }
-            else if (cells[buttonNumber].TYPE  == CellType.Treasure)
+            else if (cells[buttonNumber].TYPE == CellType.Treasure)
             {
+
                 MessageBox.Show("enhora buena lo encontraste");
+                points += 10;
                 button.Text = text;
                 InizializeGame();
+                PointsLabel.Text = points.ToString();   
             }
+        }
+
+        private void LifesLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

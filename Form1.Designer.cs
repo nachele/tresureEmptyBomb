@@ -64,6 +64,10 @@
             button33 = new Button();
             button34 = new Button();
             button35 = new Button();
+            PointsLabel = new Label();
+            LifesLabel = new Label();
+            label1 = new Label();
+            label2 = new Label();
             SuspendLayout();
             // 
             // button0
@@ -462,11 +466,59 @@
             button35.UseVisualStyleBackColor = true;
             button35.Click += OnClick;
             // 
+            // PointsLabel
+            // 
+            PointsLabel.AutoSize = true;
+            PointsLabel.BackColor = Color.Lime;
+            PointsLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PointsLabel.Location = new Point(151, 566);
+            PointsLabel.Name = "PointsLabel";
+            PointsLabel.Size = new Size(64, 25);
+            PointsLabel.TabIndex = 36;
+            PointsLabel.Text = "points";
+            // 
+            // LifesLabel
+            // 
+            LifesLabel.AutoSize = true;
+            LifesLabel.BackColor = Color.FromArgb(255, 128, 255);
+            LifesLabel.FlatStyle = FlatStyle.Popup;
+            LifesLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            LifesLabel.Location = new Point(411, 566);
+            LifesLabel.Name = "LifesLabel";
+            LifesLabel.Size = new Size(46, 25);
+            LifesLabel.TabIndex = 37;
+            LifesLabel.Text = "lifes";
+            LifesLabel.Click += LifesLabel_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.Location = new Point(81, 566);
+            label1.Name = "label1";
+            label1.Size = new Size(64, 25);
+            label1.TabIndex = 38;
+            label1.Text = "points";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.Location = new Point(345, 566);
+            label2.Name = "label2";
+            label2.Size = new Size(46, 25);
+            label2.TabIndex = 39;
+            label2.Text = "lifes";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(562, 548);
+            ClientSize = new Size(562, 611);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            Controls.Add(LifesLabel);
+            Controls.Add(PointsLabel);
             Controls.Add(button35);
             Controls.Add(button34);
             Controls.Add(button33);
@@ -506,6 +558,7 @@
             Name = "Form1";
             Text = "Form1";
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -546,5 +599,9 @@
         private Button button33;
         private Button button34;
         private Button button35;
+        private Label PointsLabel;
+        private Label LifesLabel;
+        private Label label1;
+        private Label label2;
     }
 }
