@@ -68,7 +68,7 @@
             LifesLabel = new Label();
             label1 = new Label();
             label2 = new Label();
-            label3 = new Label();
+            Labelgametipetext = new Label();
             label4 = new Label();
             GameTimeLabel = new Label();
             ResetButton = new Button();
@@ -77,7 +77,7 @@
             // button0
             // 
             button0.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button0.Location = new Point(-1, -2);
+            button0.Location = new Point(23, 21);
             button0.Name = "button0";
             button0.Size = new Size(80, 73);
             button0.TabIndex = 0;
@@ -88,7 +88,7 @@
             // button1
             // 
             button1.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.Location = new Point(85, -2);
+            button1.Location = new Point(109, 21);
             button1.Name = "button1";
             button1.Size = new Size(80, 73);
             button1.TabIndex = 1;
@@ -99,7 +99,7 @@
             // button2
             // 
             button2.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button2.Location = new Point(182, -2);
+            button2.Location = new Point(206, 21);
             button2.Name = "button2";
             button2.Size = new Size(80, 73);
             button2.TabIndex = 2;
@@ -110,7 +110,7 @@
             // button3
             // 
             button3.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button3.Location = new Point(277, -2);
+            button3.Location = new Point(301, 21);
             button3.Name = "button3";
             button3.Size = new Size(80, 73);
             button3.TabIndex = 3;
@@ -121,7 +121,7 @@
             // button4
             // 
             button4.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button4.Location = new Point(377, -2);
+            button4.Location = new Point(401, 21);
             button4.Name = "button4";
             button4.Size = new Size(80, 73);
             button4.TabIndex = 7;
@@ -132,7 +132,7 @@
             // button5
             // 
             button5.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button5.Location = new Point(477, -2);
+            button5.Location = new Point(501, 21);
             button5.Name = "button5";
             button5.Size = new Size(80, 73);
             button5.TabIndex = 6;
@@ -143,7 +143,7 @@
             // button6
             // 
             button6.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button6.Location = new Point(-1, 94);
+            button6.Location = new Point(23, 117);
             button6.Name = "button6";
             button6.Size = new Size(80, 73);
             button6.TabIndex = 5;
@@ -154,7 +154,7 @@
             // button7
             // 
             button7.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.Location = new Point(85, 94);
+            button7.Location = new Point(109, 117);
             button7.Name = "button7";
             button7.Size = new Size(80, 73);
             button7.TabIndex = 4;
@@ -165,7 +165,7 @@
             // button8
             // 
             button8.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button8.Location = new Point(182, 94);
+            button8.Location = new Point(206, 117);
             button8.Name = "button8";
             button8.Size = new Size(80, 73);
             button8.TabIndex = 8;
@@ -176,7 +176,7 @@
             // button9
             // 
             button9.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button9.Location = new Point(277, 94);
+            button9.Location = new Point(301, 117);
             button9.Name = "button9";
             button9.Size = new Size(80, 73);
             button9.TabIndex = 9;
@@ -187,7 +187,7 @@
             // button10
             // 
             button10.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button10.Location = new Point(377, 94);
+            button10.Location = new Point(401, 117);
             button10.Name = "button10";
             button10.Size = new Size(80, 73);
             button10.TabIndex = 10;
@@ -198,7 +198,7 @@
             // button11
             // 
             button11.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button11.Location = new Point(477, 94);
+            button11.Location = new Point(501, 117);
             button11.Name = "button11";
             button11.Size = new Size(80, 73);
             button11.TabIndex = 11;
@@ -209,7 +209,7 @@
             // button12
             // 
             button12.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button12.Location = new Point(-1, 184);
+            button12.Location = new Point(23, 207);
             button12.Name = "button12";
             button12.Size = new Size(80, 73);
             button12.TabIndex = 12;
@@ -220,7 +220,7 @@
             // button13
             // 
             button13.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button13.Location = new Point(85, 184);
+            button13.Location = new Point(109, 207);
             button13.Name = "button13";
             button13.Size = new Size(80, 73);
             button13.TabIndex = 13;
@@ -231,7 +231,7 @@
             // button14
             // 
             button14.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button14.Location = new Point(182, 184);
+            button14.Location = new Point(206, 207);
             button14.Name = "button14";
             button14.Size = new Size(80, 73);
             button14.TabIndex = 14;
@@ -242,7 +242,7 @@
             // button15
             // 
             button15.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button15.Location = new Point(277, 184);
+            button15.Location = new Point(301, 207);
             button15.Name = "button15";
             button15.Size = new Size(80, 73);
             button15.TabIndex = 15;
@@ -253,7 +253,7 @@
             // button16
             // 
             button16.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button16.Location = new Point(377, 184);
+            button16.Location = new Point(401, 207);
             button16.Name = "button16";
             button16.Size = new Size(80, 73);
             button16.TabIndex = 16;
@@ -264,7 +264,7 @@
             // button17
             // 
             button17.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button17.Location = new Point(477, 184);
+            button17.Location = new Point(501, 207);
             button17.Name = "button17";
             button17.Size = new Size(80, 73);
             button17.TabIndex = 17;
@@ -275,7 +275,7 @@
             // button18
             // 
             button18.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button18.Location = new Point(-10, 273);
+            button18.Location = new Point(14, 296);
             button18.Name = "button18";
             button18.Size = new Size(80, 73);
             button18.TabIndex = 18;
@@ -286,7 +286,7 @@
             // button19
             // 
             button19.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button19.Location = new Point(85, 273);
+            button19.Location = new Point(109, 296);
             button19.Name = "button19";
             button19.Size = new Size(80, 73);
             button19.TabIndex = 19;
@@ -297,7 +297,7 @@
             // button20
             // 
             button20.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button20.Location = new Point(182, 273);
+            button20.Location = new Point(206, 296);
             button20.Name = "button20";
             button20.Size = new Size(80, 73);
             button20.TabIndex = 20;
@@ -308,7 +308,7 @@
             // button21
             // 
             button21.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button21.Location = new Point(277, 273);
+            button21.Location = new Point(301, 296);
             button21.Name = "button21";
             button21.Size = new Size(80, 73);
             button21.TabIndex = 21;
@@ -319,7 +319,7 @@
             // button22
             // 
             button22.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button22.Location = new Point(377, 273);
+            button22.Location = new Point(401, 296);
             button22.Name = "button22";
             button22.Size = new Size(80, 73);
             button22.TabIndex = 22;
@@ -330,7 +330,7 @@
             // button23
             // 
             button23.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button23.Location = new Point(477, 273);
+            button23.Location = new Point(501, 296);
             button23.Name = "button23";
             button23.Size = new Size(80, 73);
             button23.TabIndex = 23;
@@ -341,7 +341,7 @@
             // button24
             // 
             button24.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button24.Location = new Point(-10, 365);
+            button24.Location = new Point(14, 388);
             button24.Name = "button24";
             button24.Size = new Size(80, 73);
             button24.TabIndex = 24;
@@ -352,7 +352,7 @@
             // button25
             // 
             button25.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button25.Location = new Point(85, 365);
+            button25.Location = new Point(109, 388);
             button25.Name = "button25";
             button25.Size = new Size(80, 73);
             button25.TabIndex = 25;
@@ -363,7 +363,7 @@
             // button26
             // 
             button26.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button26.Location = new Point(182, 365);
+            button26.Location = new Point(206, 388);
             button26.Name = "button26";
             button26.Size = new Size(80, 73);
             button26.TabIndex = 26;
@@ -374,7 +374,7 @@
             // button27
             // 
             button27.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button27.Location = new Point(277, 365);
+            button27.Location = new Point(301, 388);
             button27.Name = "button27";
             button27.Size = new Size(80, 73);
             button27.TabIndex = 27;
@@ -385,7 +385,7 @@
             // button28
             // 
             button28.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button28.Location = new Point(377, 365);
+            button28.Location = new Point(401, 388);
             button28.Name = "button28";
             button28.Size = new Size(80, 73);
             button28.TabIndex = 28;
@@ -396,7 +396,7 @@
             // button29
             // 
             button29.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button29.Location = new Point(477, 365);
+            button29.Location = new Point(501, 388);
             button29.Name = "button29";
             button29.Size = new Size(80, 73);
             button29.TabIndex = 29;
@@ -407,7 +407,7 @@
             // button30
             // 
             button30.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button30.Location = new Point(-10, 463);
+            button30.Location = new Point(14, 486);
             button30.Name = "button30";
             button30.Size = new Size(80, 73);
             button30.TabIndex = 30;
@@ -418,7 +418,7 @@
             // button31
             // 
             button31.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button31.Location = new Point(85, 463);
+            button31.Location = new Point(109, 486);
             button31.Name = "button31";
             button31.Size = new Size(80, 73);
             button31.TabIndex = 31;
@@ -429,7 +429,7 @@
             // button32
             // 
             button32.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button32.Location = new Point(182, 463);
+            button32.Location = new Point(206, 486);
             button32.Name = "button32";
             button32.Size = new Size(80, 73);
             button32.TabIndex = 32;
@@ -440,7 +440,7 @@
             // button33
             // 
             button33.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button33.Location = new Point(277, 463);
+            button33.Location = new Point(301, 486);
             button33.Name = "button33";
             button33.Size = new Size(80, 73);
             button33.TabIndex = 33;
@@ -451,7 +451,7 @@
             // button34
             // 
             button34.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button34.Location = new Point(377, 463);
+            button34.Location = new Point(401, 486);
             button34.Name = "button34";
             button34.Size = new Size(80, 73);
             button34.TabIndex = 34;
@@ -462,7 +462,7 @@
             // button35
             // 
             button35.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button35.Location = new Point(477, 463);
+            button35.Location = new Point(501, 486);
             button35.Name = "button35";
             button35.Size = new Size(80, 73);
             button35.TabIndex = 35;
@@ -475,7 +475,7 @@
             PointsLabel.AutoSize = true;
             PointsLabel.BackColor = Color.Lime;
             PointsLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PointsLabel.Location = new Point(85, 566);
+            PointsLabel.Location = new Point(109, 589);
             PointsLabel.Name = "PointsLabel";
             PointsLabel.Size = new Size(64, 25);
             PointsLabel.TabIndex = 36;
@@ -487,7 +487,7 @@
             LifesLabel.BackColor = Color.FromArgb(255, 128, 255);
             LifesLabel.FlatStyle = FlatStyle.Popup;
             LifesLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LifesLabel.Location = new Point(504, 566);
+            LifesLabel.Location = new Point(528, 589);
             LifesLabel.Name = "LifesLabel";
             LifesLabel.Size = new Size(46, 25);
             LifesLabel.TabIndex = 37;
@@ -497,7 +497,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(6, 566);
+            label1.Location = new Point(30, 589);
             label1.Name = "label1";
             label1.Size = new Size(64, 25);
             label1.TabIndex = 38;
@@ -507,26 +507,26 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(441, 566);
+            label2.Location = new Point(465, 589);
             label2.Name = "label2";
             label2.Size = new Size(46, 25);
             label2.TabIndex = 39;
             label2.Text = "lifes";
             // 
-            // label3
+            // Labelgametipetext
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label3.Location = new Point(208, 566);
-            label3.Name = "label3";
-            label3.Size = new Size(105, 25);
-            label3.TabIndex = 40;
-            label3.Text = "gametime:";
+            Labelgametipetext.AutoSize = true;
+            Labelgametipetext.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Labelgametipetext.Location = new Point(222, 589);
+            Labelgametipetext.Name = "Labelgametipetext";
+            Labelgametipetext.Size = new Size(105, 25);
+            Labelgametipetext.TabIndex = 40;
+            Labelgametipetext.Text = "gametime:";
             // 
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(319, 625);
+            label4.Location = new Point(343, 648);
             label4.Name = "label4";
             label4.Size = new Size(0, 15);
             label4.TabIndex = 41;
@@ -536,7 +536,7 @@
             GameTimeLabel.AutoSize = true;
             GameTimeLabel.BackColor = SystemColors.Control;
             GameTimeLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            GameTimeLabel.Location = new Point(319, 566);
+            GameTimeLabel.Location = new Point(333, 589);
             GameTimeLabel.Name = "GameTimeLabel";
             GameTimeLabel.Size = new Size(46, 25);
             GameTimeLabel.TabIndex = 42;
@@ -544,7 +544,7 @@
             // 
             // ResetButton
             // 
-            ResetButton.Location = new Point(222, 614);
+            ResetButton.Location = new Point(246, 637);
             ResetButton.Name = "ResetButton";
             ResetButton.Size = new Size(135, 37);
             ResetButton.TabIndex = 43;
@@ -556,11 +556,11 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(562, 679);
+            ClientSize = new Size(592, 679);
             Controls.Add(ResetButton);
             Controls.Add(GameTimeLabel);
             Controls.Add(label4);
-            Controls.Add(label3);
+            Controls.Add(Labelgametipetext);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(LifesLabel);
@@ -650,7 +650,7 @@
         private Label LifesLabel;
         private Label label1;
         private Label label2;
-        private Label label3;
+        private Label Labelgametipetext;
         private Label label4;
         private Label GameTimeLabel;
         private Button ResetButton;

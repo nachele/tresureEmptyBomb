@@ -38,6 +38,7 @@ namespace EncontrarElTesoro
             EmtyCellsCreation();
             TressureCellCreation();
             BombCellsCreation();
+            
         }//InizializeGame();
         private void OnClick(object sender, EventArgs e) // click en cualquier boton;
         {
@@ -50,9 +51,13 @@ namespace EncontrarElTesoro
             {
                 points -= 1;
             }
+            button.Text = "x";
             MessageBox.Show("pum!!"); //mesaje de pum;
             if (lifes <= 0) // si llego a 0 vidas perdio;
             {
+                points = 0;
+                Labelgametipetext.Visible = true;
+                GameTimeLabel.Visible = true;
                 GameTime();
                 MessageBox.Show("GameOver");
                 InizializeGame(); // vuelve a inicializar el juego;
@@ -65,6 +70,8 @@ namespace EncontrarElTesoro
             //mensaje de tesoro encontrado;
             points += 10;// mas 10 puntos;
             button.Text = "$"; //texto del boton dolar;
+            Labelgametipetext.Visible = true;
+            GameTimeLabel.Visible = true;
             GameTime();
             MessageBox.Show("enhora buena lo encontraste");
             InizializeGame(); //bvuelve a iniciar el juego;
@@ -128,6 +135,8 @@ namespace EncontrarElTesoro
             PointsLabel.Text = points.ToString();//etiqueta de puntos;
             rnd = new Random(); //inicializando objeto random;
             cells = new Cell[cellsNumber];//inicializando array de celdas;
+            Labelgametipetext.Visible = false;
+            GameTimeLabel.Visible = false;
         }//inicializando variables.
         private void InitializingButtonText()//inicializa texto de cada boton.
         {
