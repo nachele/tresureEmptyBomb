@@ -488,7 +488,7 @@
             LifesLabel.Size = new Size(46, 25);
             LifesLabel.TabIndex = 37;
             LifesLabel.Text = "lifes";
-            LifesLabel.Click += LifesLabel_Click;
+           
             // 
             // label1
             // 

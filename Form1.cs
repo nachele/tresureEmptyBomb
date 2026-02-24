@@ -5,11 +5,19 @@ namespace EncontrarElTesoro
 
     public partial class Form1 : Form
     {
+        #region campos
         Cell[] cells;
         int lifes;
         int points = 0;
+        int cellsNumber;
+        int bombsNumber;
+        int tressureIndex;
+        int bombIndex;
         Random rnd;
         string InitialTextButton;
+        #endregion
+
+        #region metodos
         public Form1()
         {
 
@@ -20,40 +28,63 @@ namespace EncontrarElTesoro
 
 
         }
-        private void InizializeGame()
+        private void InizializeGame() //se ejecuta 1 ved al abrir la ventana
         {
-           
-            lifes = 3;
-            LifesLabel.Text = lifes.ToString();
-            PointsLabel.Text = points.ToString();
-            int cellsNumber = 36;
-            int bombsNumber = 3;
-            int emptiesNumber = cellsNumber - bombsNumber - 1;
-            rnd = new Random(); //inicializando objeto randome
-            cells = new Cell[cellsNumber]; //inicializando array de celdas.
-            int tressureIndex = rnd.Next(0, 36); //indice del tesoro.
-            int bombIndex;
-            int emptyIndex;
-            foreach (Control control in this.Controls)
+            InitializingVariables(); 
+            InitializingButtonText();
+            EmtyCellsCreation();
+            TressureCellCreation();
+            BombCellsCreation();
+        }//InizializeGame();
+        private void OnClick(object sender, EventArgs e) // click en cualquier boton;
+        {
+            GameLogic((Button)sender);
+        }//OnClick();
+        private void BombFound(Button button) //bomba encontrada
+        {
+            lifes -= 1; //-1 vida;
+            if (points >= 10) //-10 de puntos; 
             {
-                if (control is Button boton)
-                {
-                    boton.Text = InitialTextButton; // ejemplo
-                }
+                points -= 1;
             }
-            bool exit = true;
-            for (int i = 0; i < cellsNumber; i++)
+            MessageBox.Show("pum!!"); //mesaje de pum;
+            if (lifes <= 0) // si llego a 0 vidas perdio;
+            {
+                InizializeGame(); // vuelve a inicializar el juego;
+            }
+            LifesLabel.Text = lifes.ToString();//se actualiza el label del texto;
+            PointsLabel.Text = points.ToString();//se actualiza el label de los puntos;
+        }//BombFound();
+        private void TresureFound(Button button)//tesoro encontrado;
+        {
+            //mensaje de tesoro encontrado;
+            points += 10;// mas 10 puntos;
+            button.Text = "$"; //texto del boton dolar;
+            MessageBox.Show("enhora buena lo encontraste");
+            InizializeGame(); //bvuelve a iniciar el juego;
+            PointsLabel.Text = points.ToString();//se actualiza el label de puntos;
+        } //TresureFound();
+        private void EmtyCellsCreation() //creando celdas vacías.
+        {
+            for (int i = 0; i < cellsNumber; i++) //creando celdas vacias para todas las celdas;
             {
                 cells[i] = new Cell(CellType.Empty);
             }
+        }//EmtyCellsCreation();
+        private void TressureCellCreation()//creando la celda del tesoro
+        {
+            tressureIndex = rnd.Next(0, 36);//indice del tesoro;
             cells[tressureIndex] = new Cell(CellType.Treasure); //introduciendo el tesoro en la celda randome.
-            for (int i = 0; i < bombsNumber; i++)
+        }//TressureCellCreation();
+        private void BombCellsCreation()//creando la celda de la bomba
+        {
+            bool exit = true; //loop exit or stay flag;
+            for (int i = 0; i < bombsNumber; i++)//introduciendo las bombas
             {
-
-                do
+                do //repetira tantas veces como sean necesarias hasta introducir las tres bombas.
                 {
                     bombIndex = rnd.Next(0, 36);
-                    if (cells[bombIndex].TYPE != CellType.Treasure && cells[bombIndex].TYPE != CellType.Bomb)
+                    if (cells[bombIndex].TYPE != CellType.Treasure && cells[bombIndex].TYPE != CellType.Bomb) //si en la celda no hay ni un tesoro ni bomba pone bomba
                     {
                         cells[bombIndex] = new Cell(CellType.Bomb);
                         exit = true;
@@ -64,39 +95,42 @@ namespace EncontrarElTesoro
                     }
                 } while (!exit);
             }
-        }
-        private void OnClick(object sender, EventArgs e)
+        }//BombCellsCreation();
+        private void GameLogic(Button sender) //logica de juego.
         {
-            Button button = ((Button)sender);
-            int buttonNumber = int.Parse(button.Name.Replace("button", ""));
-            string text = button.Text; ;
-            button.Text = "";
-            if (cells[buttonNumber].TYPE == CellType.Bomb)
+            Button button = sender; //obtiene el boton clickado;
+            int buttonNumber = int.Parse(button.Name.Replace("button", "")); //obtiene el indice de cada boton;
+            string text = button.Text; //obtiene el texto inicial del boton clickado;
+            button.Text = ""; //cambia a vacio el texto del boton clikado;
+            if (cells[buttonNumber].TYPE == CellType.Bomb) // si hay una bomba en el boton;
             {
-                MessageBox.Show("pum!!");
-                lifes -= 1;
-                points = 0;
-                if(lifes <= 0)
+                BombFound(button);
+            }
+            else if (cells[buttonNumber].TYPE == CellType.Treasure)//si hay un tesoro;
+            {
+                TresureFound(button);
+            }
+        } //GameLogic();
+        private void InitializingVariables()
+        {
+            cellsNumber = 36; //numero de celdas;
+            bombsNumber = 3; //numero de bombas;
+            lifes = 3; //vidas;
+            LifesLabel.Text = lifes.ToString(); //etiqueta de vidas;
+            PointsLabel.Text = points.ToString();//etiqueta de puntos;
+            rnd = new Random(); //inicializando objeto random;
+            cells = new Cell[cellsNumber];//inicializando array de celdas;
+        }//inicializando variables.
+        private void InitializingButtonText()//inicializa texto de cada boton.
+        {
+            foreach (Control control in this.Controls) //simbolo de interrogacion para cada boton;
+            {
+                if (control is Button boton)
                 {
-                    InizializeGame();
+                    boton.Text = InitialTextButton;
                 }
-                LifesLabel.Text = lifes.ToString();
-                button.Text = text;
             }
-            else if (cells[buttonNumber].TYPE == CellType.Treasure)
-            {
-
-                MessageBox.Show("enhora buena lo encontraste");
-                points += 10;
-                button.Text = text;
-                InizializeGame();
-                PointsLabel.Text = points.ToString();   
-            }
-        }
-
-        private void LifesLabel_Click(object sender, EventArgs e)
-        {
-
-        }
+        }//InitializingButtonText();
+        #endregion
     }
 }
