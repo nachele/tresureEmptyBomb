@@ -1,3 +1,4 @@
+using System;
 using System.Diagnostics.Eventing.Reader;
 
 namespace EncontrarElTesoro
@@ -13,6 +14,8 @@ namespace EncontrarElTesoro
         int bombsNumber;
         int tressureIndex;
         int bombIndex;
+        DateTime initTime;
+        TimeSpan gametime;
         Random rnd;
         string InitialTextButton;
         #endregion
@@ -30,7 +33,7 @@ namespace EncontrarElTesoro
         }
         private void InizializeGame() //se ejecuta 1 ved al abrir la ventana
         {
-            InitializingVariables(); 
+            InitializingVariables();
             InitializingButtonText();
             EmtyCellsCreation();
             TressureCellCreation();
@@ -50,6 +53,8 @@ namespace EncontrarElTesoro
             MessageBox.Show("pum!!"); //mesaje de pum;
             if (lifes <= 0) // si llego a 0 vidas perdio;
             {
+                GameTime();
+                MessageBox.Show("GameOver");
                 InizializeGame(); // vuelve a inicializar el juego;
             }
             LifesLabel.Text = lifes.ToString();//se actualiza el label del texto;
@@ -60,6 +65,7 @@ namespace EncontrarElTesoro
             //mensaje de tesoro encontrado;
             points += 10;// mas 10 puntos;
             button.Text = "$"; //texto del boton dolar;
+            GameTime();
             MessageBox.Show("enhora buena lo encontraste");
             InizializeGame(); //bvuelve a iniciar el juego;
             PointsLabel.Text = points.ToString();//se actualiza el label de puntos;
@@ -113,6 +119,8 @@ namespace EncontrarElTesoro
         } //GameLogic();
         private void InitializingVariables()
         {
+            GameTimeLabel.Text = "0:0";
+            initTime = DateTime.Now;
             cellsNumber = 36; //numero de celdas;
             bombsNumber = 3; //numero de bombas;
             lifes = 3; //vidas;
@@ -125,12 +133,31 @@ namespace EncontrarElTesoro
         {
             foreach (Control control in this.Controls) //simbolo de interrogacion para cada boton;
             {
-                if (control is Button boton)
+                if (control is Button boton && control.Name != "ResetButton")
                 {
                     boton.Text = InitialTextButton;
                 }
             }
         }//InitializingButtonText();
+        private void GameTime()//tiempo de partida
+        {
+            gametime = DateTime.Now - initTime;
+            GameTimeLabel.Text = gametime.TotalMinutes.ToString().Split(",")[0] + " min : " + gametime.TotalSeconds.ToString().Split(",")[0] + " sec";
+        }//GameTime();
         #endregion
+        private void Form1_Load(object sender, EventArgs e)
+        {
+        }
+        private void RestartPoints() { points = 0; }
+        private void ResetButton_Click(object sender, EventArgs e)
+        {
+            RestartPoints();
+            InitializingVariables();
+            InitializingVariables();
+            InitializingButtonText();
+            EmtyCellsCreation();
+            TressureCellCreation();
+            BombCellsCreation();
+        }
     }
 }

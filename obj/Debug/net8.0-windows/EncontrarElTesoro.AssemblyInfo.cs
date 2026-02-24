@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("EncontrarElTesoro")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aaa381b10b679e897a290842531d23ad20f9edae")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d49914e073f8bc3005ff746c73068368925fde21")]
 [assembly: System.Reflection.AssemblyProductAttribute("EncontrarElTesoro")]
 [assembly: System.Reflection.AssemblyTitleAttribute("EncontrarElTesoro")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

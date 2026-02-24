@@ -68,6 +68,10 @@
             LifesLabel = new Label();
             label1 = new Label();
             label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            GameTimeLabel = new Label();
+            ResetButton = new Button();
             SuspendLayout();
             // 
             // button0
@@ -471,7 +475,7 @@
             PointsLabel.AutoSize = true;
             PointsLabel.BackColor = Color.Lime;
             PointsLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PointsLabel.Location = new Point(151, 566);
+            PointsLabel.Location = new Point(85, 566);
             PointsLabel.Name = "PointsLabel";
             PointsLabel.Size = new Size(64, 25);
             PointsLabel.TabIndex = 36;
@@ -483,18 +487,17 @@
             LifesLabel.BackColor = Color.FromArgb(255, 128, 255);
             LifesLabel.FlatStyle = FlatStyle.Popup;
             LifesLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            LifesLabel.Location = new Point(411, 566);
+            LifesLabel.Location = new Point(504, 566);
             LifesLabel.Name = "LifesLabel";
             LifesLabel.Size = new Size(46, 25);
             LifesLabel.TabIndex = 37;
             LifesLabel.Text = "lifes";
-           
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label1.Location = new Point(81, 566);
+            label1.Location = new Point(6, 566);
             label1.Name = "label1";
             label1.Size = new Size(64, 25);
             label1.TabIndex = 38;
@@ -504,17 +507,60 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            label2.Location = new Point(345, 566);
+            label2.Location = new Point(441, 566);
             label2.Name = "label2";
             label2.Size = new Size(46, 25);
             label2.TabIndex = 39;
             label2.Text = "lifes";
             // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label3.Location = new Point(208, 566);
+            label3.Name = "label3";
+            label3.Size = new Size(105, 25);
+            label3.TabIndex = 40;
+            label3.Text = "gametime:";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(319, 625);
+            label4.Name = "label4";
+            label4.Size = new Size(0, 15);
+            label4.TabIndex = 41;
+            // 
+            // GameTimeLabel
+            // 
+            GameTimeLabel.AutoSize = true;
+            GameTimeLabel.BackColor = SystemColors.Control;
+            GameTimeLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            GameTimeLabel.Location = new Point(319, 566);
+            GameTimeLabel.Name = "GameTimeLabel";
+            GameTimeLabel.Size = new Size(46, 25);
+            GameTimeLabel.TabIndex = 42;
+            GameTimeLabel.Text = "0 : 0";
+            // 
+            // ResetButton
+            // 
+            ResetButton.Location = new Point(222, 614);
+            ResetButton.Name = "ResetButton";
+            ResetButton.Size = new Size(135, 37);
+            ResetButton.TabIndex = 43;
+            ResetButton.Text = "Reset";
+            ResetButton.UseVisualStyleBackColor = true;
+            ResetButton.Click += ResetButton_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(562, 611);
+            ClientSize = new Size(562, 679);
+            Controls.Add(ResetButton);
+            Controls.Add(GameTimeLabel);
+            Controls.Add(label4);
+            Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(LifesLabel);
@@ -557,6 +603,7 @@
             Controls.Add(button0);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
             PerformLayout();
         }
@@ -603,5 +650,9 @@
         private Label LifesLabel;
         private Label label1;
         private Label label2;
+        private Label label3;
+        private Label label4;
+        private Label GameTimeLabel;
+        private Button ResetButton;
     }
 }
