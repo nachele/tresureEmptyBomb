@@ -18,6 +18,7 @@ namespace EncontrarElTesoro
         TimeSpan gametime;
         Random rnd;
         string InitialTextButton;
+        System.Media.SoundPlayer player;
         #endregion
 
         #region metodos
@@ -47,7 +48,7 @@ namespace EncontrarElTesoro
         private void BombFound(Button button) //bomba encontrada
         {
             lifes -= 1; //-1 vida;
-            if (points >= 10) //-10 de puntos; 
+            if (points > 0) //-10 de puntos; 
             {
                 points -= 1;
             }
@@ -55,6 +56,7 @@ namespace EncontrarElTesoro
             button.Image = Image.FromFile("img/bomb.png");
             button.ImageAlign = ContentAlignment.MiddleCenter;
             button.BackgroundImageLayout = ImageLayout.Zoom;
+            BombFoundSound();
             MessageBox.Show("pum!!"); //mesaje de pum;
             if (lifes <= 0) // si llego a 0 vidas perdio;
             {
@@ -62,6 +64,7 @@ namespace EncontrarElTesoro
                 Labelgametipetext.Visible = true;
                 GameTimeLabel.Visible = true;
                 GameTime();
+                GameOverSound();
                 MessageBox.Show("GameOver");
                 InizializeGame(); // vuelve a inicializar el juego;
             }
@@ -73,9 +76,11 @@ namespace EncontrarElTesoro
             //mensaje de tesoro encontrado;
             points += 10;// mas 10 puntos;
             button.Text = "$"; //texto del boton dolar;
-            Labelgametipetext.Visible = true;
-            GameTimeLabel.Visible = true;
+            Labelgametipetext.Visible = true; //semuestra gametime;
+            GameTimeLabel.Visible = true;//se muestra gametime;
             GameTime();
+            button.Image = Image.FromFile("img/tesoro.png");
+            TressureFoundSound();
             MessageBox.Show("enhora buena lo encontraste");
             InizializeGame(); //bvuelve a iniciar el juego;
             PointsLabel.Text = points.ToString();//se actualiza el label de puntos;
@@ -126,6 +131,10 @@ namespace EncontrarElTesoro
             {
                 TresureFound(button);
             }
+            else
+            {
+                EmptyCellSound();
+            }
         } //GameLogic();
         private void InitializingVariables()
         {
@@ -148,8 +157,19 @@ namespace EncontrarElTesoro
                 if (control is Button boton && control.Name != "ResetButton")
                 {
                     boton.Text = InitialTextButton;
+                    boton.ForeColor = Color.White;
                     boton.Image = Image.FromFile("img/fondo.png");
-                  
+
+
+                }
+                else
+                {
+                    if (control is Button boton2 && control.Name == "ResetButton")
+                    {
+                        boton2.Text = "Reiniciar";
+                        boton2.ForeColor = Color.White;
+                        boton2.Image = Image.FromFile("img/fondo.png");
+                    }
                 }
             }
         }//InitializingButtonText();
@@ -158,11 +178,13 @@ namespace EncontrarElTesoro
             gametime = DateTime.Now - initTime;
             GameTimeLabel.Text = gametime.TotalMinutes.ToString().Split(",")[0] + " min : " + gametime.TotalSeconds.ToString().Split(",")[0] + " sec";
         }//GameTime();
-        #endregion
         private void Form1_Load(object sender, EventArgs e)
         {
         }//Form1_Load();
-        private void RestartPoints() { points = 0; }//RestartPoints();
+        private void RestartPoints()
+        {
+            points = 0;
+        }//RestartPoints();
         private void ResetButton_Click(object sender, EventArgs e)//boton de reset.
         {
             RestartPoints();
@@ -173,5 +195,28 @@ namespace EncontrarElTesoro
             TressureCellCreation();
             BombCellsCreation();
         }//ResetButton_Click();
+        private void TressureFoundSound()
+        {
+                        player = new System.Media.SoundPlayer("sound/TressureFound.wav");
+                        player.Play();
+
+        }//TressureFoundSound();
+        private void BombFoundSound()
+        {
+                        player = new System.Media.SoundPlayer("sound/Negativo.wav");
+                        player.Play();
+        }//BombFoundSound();    
+        private void GameOverSound()
+        {
+                        player = new System.Media.SoundPlayer("sound/gameOver.wav");
+                        player.Play();
+        }//GameOverSound();
+        private void EmptyCellSound()
+        {
+                        player = new System.Media.SoundPlayer("sound/digging.wav");
+                        player.Play();
+        }//EmptyCellSound();
+        #endregion
+
     }
 }

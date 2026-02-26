@@ -497,6 +497,7 @@
             // 
             // button35
             // 
+            button35.FlatAppearance.BorderColor = Color.FromArgb(128, 64, 64);
             button35.Font = new Font("Segoe UI", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button35.Location = new Point(573, 648);
             button35.Margin = new Padding(3, 4, 3, 4);
@@ -510,18 +511,19 @@
             // PointsLabel
             // 
             PointsLabel.AutoSize = true;
-            PointsLabel.BackColor = Color.Lime;
-            PointsLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PointsLabel.BackColor = Color.DarkGoldenrod;
+            PointsLabel.FlatStyle = FlatStyle.Popup;
+            PointsLabel.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
             PointsLabel.Location = new Point(125, 785);
             PointsLabel.Name = "PointsLabel";
-            PointsLabel.Size = new Size(80, 32);
+            PointsLabel.Size = new Size(78, 31);
             PointsLabel.TabIndex = 36;
             PointsLabel.Text = "points";
             // 
             // LifesLabel
             // 
             LifesLabel.AutoSize = true;
-            LifesLabel.BackColor = Color.FromArgb(255, 128, 255);
+            LifesLabel.BackColor = Color.Gold;
             LifesLabel.FlatStyle = FlatStyle.Popup;
             LifesLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
             LifesLabel.Location = new Point(603, 785);
@@ -533,30 +535,33 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.Location = new Point(34, 785);
             label1.Name = "label1";
-            label1.Size = new Size(80, 32);
+            label1.Size = new Size(78, 31);
             label1.TabIndex = 38;
             label1.Text = "points";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.Location = new Point(531, 785);
             label2.Name = "label2";
-            label2.Size = new Size(57, 32);
+            label2.Size = new Size(58, 31);
             label2.TabIndex = 39;
             label2.Text = "lifes";
             // 
             // Labelgametipetext
             // 
             Labelgametipetext.AutoSize = true;
-            Labelgametipetext.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Labelgametipetext.Location = new Point(254, 785);
+            Labelgametipetext.BackColor = Color.Transparent;
+            Labelgametipetext.Font = new Font("Segoe UI Semibold", 13.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            Labelgametipetext.Location = new Point(211, 785);
             Labelgametipetext.Name = "Labelgametipetext";
-            Labelgametipetext.Size = new Size(135, 32);
+            Labelgametipetext.Size = new Size(125, 31);
             Labelgametipetext.TabIndex = 40;
             Labelgametipetext.Text = "gametime:";
             // 
@@ -571,9 +576,9 @@
             // GameTimeLabel
             // 
             GameTimeLabel.AutoSize = true;
-            GameTimeLabel.BackColor = SystemColors.Control;
+            GameTimeLabel.BackColor = Color.Chartreuse;
             GameTimeLabel.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            GameTimeLabel.Location = new Point(381, 785);
+            GameTimeLabel.Location = new Point(352, 785);
             GameTimeLabel.Name = "GameTimeLabel";
             GameTimeLabel.Size = new Size(59, 32);
             GameTimeLabel.TabIndex = 42;
@@ -581,6 +586,7 @@
             // 
             // ResetButton
             // 
+            ResetButton.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             ResetButton.Location = new Point(281, 849);
             ResetButton.Margin = new Padding(3, 4, 3, 4);
             ResetButton.Name = "ResetButton";
